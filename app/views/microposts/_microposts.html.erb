@@ -1,5 +1,6 @@
 <ul class="list-unstyled">
-  
+
+<!--マイクロポストのループ-->
 <% microposts.each do |micropost| %>
 
     <li class="media mb-3">
@@ -20,7 +21,7 @@
 </p>
         </div>
         <div>
-          
+
 <% if current_user == micropost.user %>
 
             
@@ -28,6 +29,9 @@
 
           
 <% end %>
+
+<!--お気に入りボタン設置-->
+<%= link_to "Like", micropost, method: :delete,  class: 'btn btn-warning btn-sm' %>
 
         </div>
       </div>

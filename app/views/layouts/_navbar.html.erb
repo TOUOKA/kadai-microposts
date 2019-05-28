@@ -9,6 +9,9 @@
       <ul class="navbar-nav mr-auto"></ul>
       <ul class="navbar-nav">
       <% if logged_in? %>
+          <!--0528_お気に入り表示 LIKESページの指定をする。-->
+          <li class="nav-item"><%= link_to 'LIKES',users_path, class: 'nav-link' %></li>
+      
           <li class="nav-item"><%= link_to 'Users', users_path, class: 'nav-link' %></li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
