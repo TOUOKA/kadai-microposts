@@ -9,6 +9,8 @@
       <ul class="navbar-nav mr-auto"></ul>
       <ul class="navbar-nav">
       <% if logged_in? %>
+          <!--課題修正_ナビバーにお気に入りを追加-->
+      　　<li class="nav_item"><%= link_to 'Likes', likes_user_path(current_user), class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Users', users_path, class: 'nav-link' %></li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
