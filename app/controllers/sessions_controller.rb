@@ -22,13 +22,15 @@ class SessionsController < ApplicationController
   
   private
   
- def login(email,password)
-  @user = User.find_by(email: email)
-  if @user = User.find_by(email: email)
-    session[:user_id] = @user.id
-    return true
-  else
-    return false
+  def login(email, password)
+    @user = User.find_by(email: email)
+    if @user && @user.authenticate(password)
+      # ログイン成功
+      session[:user_id] = @user.id
+      return true
+    else
+      # ログイン失敗
+      return false
+    end
   end
- end
 end
