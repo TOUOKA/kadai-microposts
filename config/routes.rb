@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likes
     end
     collection do
       get :search
@@ -18,4 +19,11 @@ Rails.application.routes.draw do
   
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  
+  #中間テーブルから先にある、
+  #フォロー中のユーザとフォローされているユーザ一覧を表示するページ
+  resources :favorites, only: [:create, :destroy]
+  #member＝特定のデータに対するアクション
+
+    
 end
